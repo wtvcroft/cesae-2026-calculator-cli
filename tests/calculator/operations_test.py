@@ -28,3 +28,12 @@ def test_division():
 
     with pytest.raises(ValueError):
         operations.divide(5, 0)
+
+
+def average(values):
+    size = len(values)
+    soma = sum(values)
+    media = soma / size
+    return media
+
+
