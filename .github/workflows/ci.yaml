@@ -1,0 +1,19 @@
+name:  CI (Continous Integration)
+on: [push, pull_request]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps: 
+            - uses: actions/checkout@v8
+            - name: Install the latest version of uv
+              uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.2.0
+              with:
+                python-version: 3.14.5
+
+        - name: Run Test
+        - run: uv run --frozen pytest
+
+
+
+
